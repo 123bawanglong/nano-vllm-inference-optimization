@@ -1,0 +1,14 @@
+{
+  "backend": "fusion",
+  "budget": 512,
+  "graph": 0,
+  "action": "correctness",
+  "reps": 3,
+  "label": "",
+  "import": "src/nano-vllm-cuda/nanovllm/__init__.py",
+  "torch": "2.11.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "dtype": "torch.bfloat16",
+  "blocks": 254,
+  "passed_local_assertions": true
+}

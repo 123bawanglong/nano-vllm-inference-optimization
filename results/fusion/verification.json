@@ -1,0 +1,231 @@
+{
+  "original_unchanged": true,
+  "checked_files": 26,
+  "commit": "bb823b3e06983d71485a8e1f23715ebd87d98ef8",
+  "logit_comparisons": [
+    {
+      "graph": 0,
+      "ops": "all",
+      "step": 0,
+      "max_abs": 0.15625,
+      "relative_l2": 0.017119795083999634,
+      "min_cosine": 0.9998496174812317,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 0,
+      "ops": "all",
+      "step": 1,
+      "max_abs": 0.12890625,
+      "relative_l2": 0.014892040751874447,
+      "min_cosine": 0.9998427033424377,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 0,
+      "ops": "all",
+      "step": 2,
+      "max_abs": 0.171875,
+      "relative_l2": 0.01815500669181347,
+      "min_cosine": 0.9997125267982483,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 0,
+      "ops": "all",
+      "step": 3,
+      "max_abs": 0.13134765625,
+      "relative_l2": 0.018592575564980507,
+      "min_cosine": 0.9998036623001099,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 0,
+      "ops": "all",
+      "label": "reverse",
+      "step": 0,
+      "max_abs": 0.15625,
+      "relative_l2": 0.017119795083999634,
+      "min_cosine": 0.9998496174812317,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 0,
+      "ops": "all",
+      "label": "reverse",
+      "step": 1,
+      "max_abs": 0.12890625,
+      "relative_l2": 0.014892040751874447,
+      "min_cosine": 0.9998427033424377,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 0,
+      "ops": "all",
+      "label": "reverse",
+      "step": 2,
+      "max_abs": 0.171875,
+      "relative_l2": 0.01815500669181347,
+      "min_cosine": 0.9997125267982483,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 0,
+      "ops": "all",
+      "label": "reverse",
+      "step": 3,
+      "max_abs": 0.13134765625,
+      "relative_l2": 0.018592575564980507,
+      "min_cosine": 0.9998036623001099,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "step": 0,
+      "max_abs": 0.15625,
+      "relative_l2": 0.017119795083999634,
+      "min_cosine": 0.9998496174812317,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "step": 1,
+      "max_abs": 0.12890625,
+      "relative_l2": 0.014892040751874447,
+      "min_cosine": 0.9998427033424377,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "step": 2,
+      "max_abs": 0.171875,
+      "relative_l2": 0.01815500669181347,
+      "min_cosine": 0.9997125267982483,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "step": 3,
+      "max_abs": 0.13134765625,
+      "relative_l2": 0.018592575564980507,
+      "min_cosine": 0.9998036623001099,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "add_rms",
+      "step": 0,
+      "max_abs": 0.15625,
+      "relative_l2": 0.017119795083999634,
+      "min_cosine": 0.9998496174812317,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "add_rms",
+      "step": 1,
+      "max_abs": 0.12890625,
+      "relative_l2": 0.014892040751874447,
+      "min_cosine": 0.9998427033424377,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "add_rms",
+      "step": 2,
+      "max_abs": 0.171875,
+      "relative_l2": 0.01815500669181347,
+      "min_cosine": 0.9997125267982483,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "add_rms",
+      "step": 3,
+      "max_abs": 0.13134765625,
+      "relative_l2": 0.018592575564980507,
+      "min_cosine": 0.9998036623001099,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "silu",
+      "step": 0,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "min_cosine": 0.999987006187439,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "silu",
+      "step": 1,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "min_cosine": 0.9999848008155823,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "silu",
+      "step": 2,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "min_cosine": 0.9999952912330627,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "silu",
+      "step": 3,
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "min_cosine": 0.9999818801879883,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "label": "reverse",
+      "step": 0,
+      "max_abs": 0.15625,
+      "relative_l2": 0.017119795083999634,
+      "min_cosine": 0.9998496174812317,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "label": "reverse",
+      "step": 1,
+      "max_abs": 0.12890625,
+      "relative_l2": 0.014892040751874447,
+      "min_cosine": 0.9998427033424377,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "label": "reverse",
+      "step": 2,
+      "max_abs": 0.171875,
+      "relative_l2": 0.01815500669181347,
+      "min_cosine": 0.9997125267982483,
+      "top1_match_fraction": 1.0
+    },
+    {
+      "graph": 1,
+      "ops": "all",
+      "label": "reverse",
+      "step": 3,
+      "max_abs": 0.13134765625,
+      "relative_l2": 0.018592575564980507,
+      "min_cosine": 0.9998036623001099,
+      "top1_match_fraction": 1.0
+    }
+  ]
+}
