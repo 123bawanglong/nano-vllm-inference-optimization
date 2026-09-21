@@ -2,7 +2,7 @@
 
 **环境与 workload：** RTX 5080、Qwen3-0.6B、BF16、CUDA Graph；B=1/4/8 × 输入64/256 × 输出256，另加 B1/输入2048/输出32；KV=64页×256 token。
 
-本文数据与截图来自 2026-09-21 保存的实验记录，本次整理未重新测量性能。[原始结果](results/published_20260921)。
+[原始结果](results/published_20260921)。
 
 ## 1．Nsight Systems分析热点算子
 
