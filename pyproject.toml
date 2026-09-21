@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage="https://github.com/123bawanglong/nano-vllm-inference-optimization"
+Homepage="https://github.com/123bawanglong/nano-vllm-norm-rope-fusion"
 
 [tool.setuptools.packages.find]
 where = ["."]
