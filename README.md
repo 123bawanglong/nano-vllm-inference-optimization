@@ -151,4 +151,4 @@ Source / SASS：源码保留BF16舍入
 
 本项目在 [nano-vLLM](https://github.com/GeeeekExplorer/nano-vllm) 的调度、CUDA Graph 和 Attention 实现上，增加 Q/K Norm＋RoPE CUDA 融合、Decode adapter 及实验验证；KV cache 写入仍使用原生实现。保留上游 [MIT LICENSE](LICENSE)。
 
-[复现说明](docs/reproduce.md) · [融合 kernel](src/qk_norm_rope/kernel.cu) · [模型接入](src/qk_norm_rope/adapter.py)
+[融合 kernel](src/qk_norm_rope/kernel.cu) · [模型接入](src/qk_norm_rope/adapter.py)

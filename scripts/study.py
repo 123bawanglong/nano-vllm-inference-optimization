@@ -33,7 +33,7 @@ def prepare():
     baseline.dump(OUT/'manifest.json', dict(baseline_sha256=baseline.sha(BASELINE/'baseline_manifest.json'),
         model_hashes_verified=True, sources=operational_sources(), config=baseline.CONFIG,
         workloads_sha256=baseline.sha(OUT/'workloads.json'), fixture_sha256=baseline.sha(FIXTURE),
-        protocol_sha256=baseline.sha(ROOT/'docs/reproduce.md'), model_fixture_sha256=baseline.sha(MODEL_FIXTURE),
+        protocol_sha256=baseline.sha(ROOT/'README.md'), model_fixture_sha256=baseline.sha(MODEL_FIXTURE),
         paired_processes=10, measured_requests_per_case_per_process=2, gpu=baseline.gpu()))
 
 
@@ -45,7 +45,7 @@ def check():
     assert manifest['fixture_sha256'] == baseline.sha(FIXTURE)
     assert manifest['model_fixture_sha256'] == baseline.sha(MODEL_FIXTURE)
     assert manifest['baseline_sha256'] == baseline.sha(BASELINE/'baseline_manifest.json')
-    assert manifest['protocol_sha256'] == baseline.sha(ROOT/'docs/reproduce.md')
+    assert manifest['protocol_sha256'] == baseline.sha(ROOT/'README.md')
     return json.loads((OUT/'workloads.json').read_text())
 
 

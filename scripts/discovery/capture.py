@@ -14,7 +14,7 @@ def prepare(out):
     baseline.check_manifest(BASELINE)
     out.mkdir(parents=True,exist_ok=False)
     (out/'workloads.json').write_bytes((BASELINE/'workloads.json').read_bytes())
-    (out/'PROTOCOL.md').write_bytes((ROOT/'docs/reproduce.md').read_bytes())
+    (out/'PROTOCOL.md').write_bytes((ROOT/'README.md').read_bytes())
     baseline.dump(out/'manifest.json',dict(baseline_sha256=baseline.sha(BASELINE/'baseline_manifest.json'),
         workloads_sha256=baseline.sha(out/'workloads.json'),source_sha256=baseline.sources(),
         capture_sha256=baseline.sha(Path(__file__)),protocol_sha256=baseline.sha(out/'PROTOCOL.md'),
