@@ -20,12 +20,9 @@ dist/
 *.zip
 *.pt
 *.safetensors
-# Two intentionally curated numerical fixtures, not model weights (12.2 MiB total).
-!results/compile_boundary_20260918_233238/real_first_layer_fixtures.pt
-!results/full_project_20260919/kernel_model_fixtures_before.pt
-results/full_project_20260919/*
-!results/full_project_20260919/kernel_model_fixtures_before.pt
-results/baseline_20260918_170614/environment.json
+# Curated numerical test fixtures, not model weights.
+!tests/fixtures/*.pt
+/results/
 scripts/**/latest*.txt
 .vscode/
 tools/

@@ -4,4 +4,4 @@
 *.jpg binary
 *.jpeg binary
 # Preserve frozen evidence byte-for-byte, including profiler table spacing.
-results/** -text -whitespace
+docs/results/** -text -whitespace

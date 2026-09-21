@@ -54,18 +54,18 @@ def commands(stage, out, tool='systems', nsys='nsys', ncu='ncu'):
         return [sys.executable, '-m', module, *map(str, args)]
 
     def study(*args):
-        return py('scripts.full_project.study', *args)
+        return py('scripts.study', *args)
 
     def idle(name):
         return py('scripts.discovery.idle_check', '--output', out / f'idle_{name}.json')
 
     if stage == 'prepare':
-        jobs = [('freeze_baseline', py('benchmarks.baseline', 'prepare', '--out', out / 'baseline'))]
+        jobs = [('freeze_baseline', py('scripts.baseline', 'prepare', '--out', out / 'baseline'))]
         for run in range(1, 4):
             jobs += [(f'idle_baseline_{run}', idle(f'baseline_{run}')),
-                     (f'baseline_{run}', py('benchmarks.baseline', 'sample', '--out', out / 'baseline', '--run-id', run))]
+                     (f'baseline_{run}', py('scripts.baseline', 'sample', '--out', out / 'baseline', '--run-id', run))]
         return jobs + [('freeze_experiment', study('prepare'))]
-    gate = ('kernel_validation', py('scripts.full_project.kernel_validation', '--label', 'final'))
+    gate = ('kernel_validation', py('scripts.kernel_validation', '--label', 'final'))
     if stage == 'kernel':
         return [gate]
     if stage == 'validate':
@@ -81,7 +81,7 @@ def commands(stage, out, tool='systems', nsys='nsys', ncu='ncu'):
                 jobs += [(f'idle_{tag}', idle(tag)), (tag, study('timing', '--variant', variant, '--pair', pair))]
         return jobs
     if stage == 'analyze':
-        return [('paired_statistics', py('scripts.full_project.analyze_ab'))]
+        return [('paired_statistics', py('scripts.analyze_ab'))]
     if tool == 'systems':
         dest = out / 'discovery'
         jobs = [('discovery_prepare', py('scripts.discovery.capture', 'prepare', '--out', dest))]
@@ -152,7 +152,7 @@ def main():
             (out / 'run.json').write_text(json.dumps(cfg, indent=2) + '\n')
         elif args.stage != 'analyze':
             # Reject changed source or workload before generating new evidence.
-            subprocess.run([sys.executable, '-m', 'scripts.full_project.study', 'check'], cwd=ROOT, env=env, check=True)
+            subprocess.run([sys.executable, '-m', 'scripts.study', 'check'], cwd=ROOT, env=env, check=True)
         run_tasks(tasks, out, env)
     except (ValueError, OSError, RuntimeError, subprocess.CalledProcessError) as exc:
         parser.exit(1, f'{exc}\n')

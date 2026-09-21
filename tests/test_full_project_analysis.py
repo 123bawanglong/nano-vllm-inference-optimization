@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from scripts.full_project import analyze_ab
+from scripts import analyze_ab
 import hashlib
 
 

@@ -1,6 +1,5 @@
 """Unfiltered native full-request discovery; no model/kernel substitution."""
 import argparse
-import importlib.util
 import json
 import os
 from pathlib import Path
@@ -8,16 +7,14 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 from scripts.runtime import BASELINE
 NSYS=os.environ.get('NSYS', 'nsys')
-spec=importlib.util.spec_from_file_location('baseline',ROOT/'benchmarks/baseline.py')
-baseline=importlib.util.module_from_spec(spec)
-spec.loader.exec_module(baseline)
+from scripts import baseline
 
 
 def prepare(out):
     baseline.check_manifest(BASELINE)
     out.mkdir(parents=True,exist_ok=False)
     (out/'workloads.json').write_bytes((BASELINE/'workloads.json').read_bytes())
-    (out/'PROTOCOL.md').write_bytes(Path(__file__).with_name('PROTOCOL.md').read_bytes())
+    (out/'PROTOCOL.md').write_bytes((ROOT/'docs/reproduce.md').read_bytes())
     baseline.dump(out/'manifest.json',dict(baseline_sha256=baseline.sha(BASELINE/'baseline_manifest.json'),
         workloads_sha256=baseline.sha(out/'workloads.json'),source_sha256=baseline.sources(),
         capture_sha256=baseline.sha(Path(__file__)),protocol_sha256=baseline.sha(out/'PROTOCOL.md'),

@@ -34,7 +34,7 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertEqual(len(timing), 20)
         self.assertEqual([cmd[cmd.index('--variant') + 1] for cmd in timing[:4]],
                          ['native', 'fused', 'fused', 'native'])
-        self.assertTrue(all(cmd[:3] == [experiment.sys.executable, '-m', 'scripts.full_project.study'] for cmd in timing))
+        self.assertTrue(all(cmd[:3] == [experiment.sys.executable, '-m', 'scripts.study'] for cmd in timing))
         self.assertEqual(len([cmd for _, cmd in tasks if 'scripts.discovery.idle_check' in cmd]), 20)
 
     def test_profile_systems_is_unfiltered_graph_nodes(self):
