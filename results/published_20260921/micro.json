@@ -1,0 +1,1250 @@
+{
+  "rows": [
+    {
+      "case": "b1_p64_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          3.891040086746216,
+          4.731264114379883,
+          5.748928070068359,
+          4.547423839569092,
+          5.019968032836914,
+          3.6873281002044678,
+          4.9053120613098145,
+          3.680608034133911,
+          4.754879951477051,
+          3.7565441131591797
+        ],
+        "fused": [
+          1.4093760251998901,
+          1.4398399591445923,
+          1.6219840049743652,
+          1.9048000574111938,
+          1.423840045928955,
+          1.6123839616775513,
+          1.4207680225372314,
+          1.599519968032837,
+          1.4206080436706543,
+          1.6144640445709229
+        ]
+      },
+      "median_us": {
+        "native": 4.639343976974487,
+        "fused": 1.5196799635887146
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 1.759,
+            "ts": 7001247928315.253,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.96,
+            "ts": 7001247928317.108,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 1.631,
+            "ts": 7001247928318.164,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 0.959,
+            "ts": 7001247928319.891,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.762,
+            "ts": 7001247945400.06,
+            "grid": [
+              6,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b1_p256_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          5.236639976501465,
+          5.655648231506348,
+          4.924320220947266,
+          4.151167869567871,
+          5.003359794616699,
+          5.235072135925293,
+          4.175392150878906,
+          5.4339518547058105,
+          4.151199817657471,
+          5.268703937530518
+        ],
+        "fused": [
+          1.4357119798660278,
+          1.4417279958724976,
+          1.4286400079727173,
+          1.4263999462127686,
+          1.4516479969024658,
+          2.8014400005340576,
+          1.5992319583892822,
+          1.4176000356674194,
+          1.4107840061187744,
+          1.6354559659957886
+        ]
+      },
+      "median_us": {
+        "native": 5.119215965270996,
+        "fused": 1.4387199878692627
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.804,
+            "ts": 7001248162606.216,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.804,
+            "ts": 7001248162607.148,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 0.901,
+            "ts": 7001248162608.08,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 0.996,
+            "ts": 7001248162609.045,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 2.081,
+            "ts": 7001248177874.916,
+            "grid": [
+              6,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b1_p2048_o32",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          4.208799839019775,
+          5.383967876434326,
+          3.9098238945007324,
+          5.271200180053711,
+          6.818655967712402,
+          5.094592094421387,
+          4.003935813903809,
+          5.212831974029541,
+          4.172063827514648,
+          5.180992126464844
+        ],
+        "fused": [
+          2.360032081604004,
+          1.669983983039856,
+          1.4156800508499146,
+          1.603551983833313,
+          1.651968002319336,
+          1.4100799560546875,
+          1.9207680225372314,
+          1.4205440282821655,
+          1.411072015762329,
+          1.4901119470596313
+        ]
+      },
+      "median_us": {
+        "native": 5.137792110443115,
+        "fused": 1.5468319654464722
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.832,
+            "ts": 7001248412829.137,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.8,
+            "ts": 7001248412830.065,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 0.896,
+            "ts": 7001248412830.929,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 0.96,
+            "ts": 7001248412831.921,
+            "grid": [
+              4,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.793,
+            "ts": 7001248427255.406,
+            "grid": [
+              6,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b2_p64_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          4.256159782409668,
+          5.30620813369751,
+          5.442944049835205,
+          6.567903995513916,
+          5.097856044769287,
+          5.289696216583252,
+          4.236000061035156,
+          5.234496116638184,
+          5.473055839538574,
+          5.545663833618164
+        ],
+        "fused": [
+          1.4495680332183838,
+          1.493280053138733,
+          1.4678720235824585,
+          1.422111988067627,
+          1.6574079990386963,
+          1.4973119497299194,
+          1.4768320322036743,
+          1.42576003074646,
+          1.5387519598007202,
+          1.4254080057144165
+        ]
+      },
+      "median_us": {
+        "native": 5.297952175140381,
+        "fused": 1.4723520278930664
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 1.152,
+            "ts": 7001249008461.062,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 1.055,
+            "ts": 7001249008462.278,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 1.311,
+            "ts": 7001249008463.43,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 1.055,
+            "ts": 7001249008464.805,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.921,
+            "ts": 7001249022777.569,
+            "grid": [
+              12,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b2_p256_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          5.059743881225586,
+          4.372096061706543,
+          4.391712188720703,
+          5.281280040740967,
+          5.419712066650391,
+          5.325376033782959,
+          5.528512001037598,
+          4.327328205108643,
+          5.1985602378845215,
+          5.200960159301758
+        ],
+        "fused": [
+          1.65283203125,
+          1.448256015777588,
+          1.431391954421997,
+          1.420032024383545,
+          1.602336049079895,
+          1.5100799798965454,
+          1.4880640506744385,
+          1.706719994544983,
+          1.4351999759674072,
+          1.425920009613037
+        ]
+      },
+      "median_us": {
+        "native": 5.19976019859314,
+        "fused": 1.4681600332260132
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.867,
+            "ts": 7001249243314.681,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.867,
+            "ts": 7001249243315.644,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 0.963,
+            "ts": 7001249243316.607,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 1.091,
+            "ts": 7001249243317.666,
+            "grid": [
+              8,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.854,
+            "ts": 7001249258280.161,
+            "grid": [
+              12,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b4_p64_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          5.058112144470215,
+          5.274208068847656,
+          6.400256156921387,
+          5.355807781219482,
+          6.015711784362793,
+          6.505792140960693,
+          6.484831809997559,
+          5.1263041496276855,
+          4.147647857666016,
+          6.178783893585205
+        ],
+        "fused": [
+          1.553279995918274,
+          1.5073920488357544,
+          1.6132160425186157,
+          1.4451839923858643,
+          1.6850559711456299,
+          1.505120038986206,
+          1.5008959770202637,
+          1.5614399909973145,
+          1.9240000247955322,
+          1.4851200580596924
+        ]
+      },
+      "median_us": {
+        "native": 5.685759782791138,
+        "fused": 1.5303360223770142
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.896,
+            "ts": 7001249487422.678,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.896,
+            "ts": 7001249487423.638,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 0.992,
+            "ts": 7001249487424.598,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 1.024,
+            "ts": 7001249487425.686,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.827,
+            "ts": 7001249502081.778,
+            "grid": [
+              24,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b4_p256_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          5.257023811340332,
+          5.682271957397461,
+          5.840799808502197,
+          4.371679782867432,
+          4.119904041290283,
+          6.110335826873779,
+          5.208096027374268,
+          5.304895877838135,
+          5.935391902923584,
+          6.396063804626465
+        ],
+        "fused": [
+          1.5304640531539917,
+          1.6825920343399048,
+          1.648959994316101,
+          1.4253120422363281,
+          1.695072054862976,
+          1.538432002067566,
+          1.502303957939148,
+          1.4446079730987549,
+          1.659551978111267,
+          1.5149120092391968
+        ]
+      },
+      "median_us": {
+        "native": 5.493583917617798,
+        "fused": 1.5344480276107788
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.897,
+            "ts": 7001249731166.682,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.897,
+            "ts": 7001249731167.643,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 0.994,
+            "ts": 7001249731168.604,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 1.057,
+            "ts": 7001249731169.662,
+            "grid": [
+              16,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.865,
+            "ts": 7001249746547.115,
+            "grid": [
+              24,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b8_p64_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          4.616447925567627,
+          5.742623805999756,
+          5.644000053405762,
+          5.56496000289917,
+          4.577792167663574,
+          6.016511917114258,
+          6.072351932525635,
+          6.169312000274658,
+          4.59878396987915,
+          6.197504043579102
+        ],
+        "fused": [
+          1.537727952003479,
+          1.4511679410934448,
+          1.8206080198287964,
+          1.5360000133514404,
+          1.5424319505691528,
+          1.4314240217208862,
+          1.6970239877700806,
+          1.4303679466247559,
+          1.5357120037078857,
+          1.4174079895019531
+        ]
+      },
+      "median_us": {
+        "native": 5.693311929702759,
+        "fused": 1.535856008529663
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 1.156,
+            "ts": 7001249971842.308,
+            "grid": [
+              64,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 1.091,
+            "ts": 7001249971843.56,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 1.348,
+            "ts": 7001249971844.715,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 1.059,
+            "ts": 7001249971846.159,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.929,
+            "ts": 7001249985790.943,
+            "grid": [
+              48,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    },
+    {
+      "case": "b8_p256_o256",
+      "errors": {
+        "q": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "different": 0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "times_us": {
+        "native": [
+          4.744768142700195,
+          5.700319766998291,
+          5.936704158782959,
+          4.540351867675781,
+          5.631616115570068,
+          5.559040069580078,
+          5.711616039276123,
+          5.8496317863464355,
+          5.644576072692871,
+          5.666016101837158
+        ],
+        "fused": [
+          1.5323840379714966,
+          1.5415359735488892,
+          1.5412479639053345,
+          1.6328959465026855,
+          2.8012800216674805,
+          1.4767359495162964,
+          1.5694080591201782,
+          1.4202560186386108,
+          1.5378880500793457,
+          1.5340800285339355
+        ]
+      },
+      "median_us": {
+        "native": 5.655296087265015,
+        "fused": 1.53956800699234
+      },
+      "kernels": {
+        "native": [
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.898,
+            "ts": 7001250213179.379,
+            "grid": [
+              64,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_red_fused__to_copy_add_mean_mul_pow_rsqrt_0",
+            "us": 0.866,
+            "ts": 7001250213180.374,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              64,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_0",
+            "us": 0.995,
+            "ts": 7001250213181.336,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "stream": 7
+          },
+          {
+            "name": "triton_poi_fused__to_copy_add_cat_index_mul_split_sub_1",
+            "us": 1.027,
+            "ts": 7001250213182.427,
+            "grid": [
+              32,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ],
+        "fused": [
+          {
+            "name": "void qk_kernel<4>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16 const*, long const*, float const*, __nv_bfloat16*, __nv_bfloat16*, int, long, long, long, long, long, long, long, long, long, long, float, bool)",
+            "us": 1.874,
+            "ts": 7001250227051.439,
+            "grid": [
+              48,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ],
+            "stream": 7
+          }
+        ]
+      },
+      "input_unchanged": true
+    }
+  ],
+  "complete": true,
+  "exact_gate": true,
+  "manifest_sha256": "8f5bfe006138a5ef86a1a5e746a904567f2072ea86928116f2aa4bba72cac196",
+  "method": "1000 independent chain calls per CUDA Graph,10 alternating paired measurements"
+}

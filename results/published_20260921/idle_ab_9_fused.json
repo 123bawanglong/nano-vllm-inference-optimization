@@ -1,0 +1,31 @@
+{
+  "threshold": 20,
+  "samples": [
+    {
+      "unix_time": 1789980862.2315602,
+      "gpu": "17, 3146, 43, 87.51",
+      "utilization_pct": 17
+    },
+    {
+      "unix_time": 1789980864.2980614,
+      "gpu": "18, 3142, 42, 75.40",
+      "utilization_pct": 18
+    },
+    {
+      "unix_time": 1789980866.364868,
+      "gpu": "18, 3144, 42, 75.19",
+      "utilization_pct": 18
+    },
+    {
+      "unix_time": 1789980869.2742553,
+      "gpu": "17, 3140, 41, 74.32",
+      "utilization_pct": 17
+    },
+    {
+      "unix_time": 1789980871.3443973,
+      "gpu": "17, 3143, 41, 74.45",
+      "utilization_pct": 17
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,4717 @@
+{
+  "label": "final",
+  "torch": "2.11.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "fixture_sha256": "3e50b64f72f5f6fc93b3cf321574c9c62fd3d5a965205869a17c12387b32bcb3",
+  "validation_sha256": "a56ecafba1973a1827f7fba02e5802b4c119d6a56166e5e0fcde01b3e53d9f88",
+  "source_sha256": {
+    "src/qk_norm_rope/README.md": "d3592ab60fd6dce8c6d4e19c80a3e54c0dd5b695e441a4359aff8c634097d1d0",
+    "src/qk_norm_rope/__init__.py": "8ee125d4f2ebe25b81168647198144c87115a45fc04aadf7c60c267ce5952409",
+    "src/qk_norm_rope/kernel.cu": "f19f8d545d17fc139ee21206e9603d8d5e0d6ea07bdb3d66c418fffcb21b2837"
+  },
+  "rows": [
+    {
+      "case": "b1_p64_o256",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b1_p64_o256",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b1_p256_o256",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b1_p256_o256",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b1_p2048_o32",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b1_p2048_o32",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b2_p64_o256",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b2_p64_o256",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b2_p256_o256",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b2_p256_o256",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b4_p64_o256",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b4_p64_o256",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b4_p256_o256",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b4_p256_o256",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b8_p64_o256",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b8_p64_o256",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b8_p256_o256",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "b8_p256_o256",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed0",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed0",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed1",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed1",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed2",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed2",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed3",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed3",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed4",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed4",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed5",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed5",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed6",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed6",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed7",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed7",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed8",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed8",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed9",
+      "warps": 1,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b1_seed9",
+      "warps": 4,
+      "q_stride": [
+        2048,
+        128,
+        1
+      ],
+      "k_stride": [
+        1024,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        256,
+        2
+      ],
+      "k_stride": [
+        2048,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 1024,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed0",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed0",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed2",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed2",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed3",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed3",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed4",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed4",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed5",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed5",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed6",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed6",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed7",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed7",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed8",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed8",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed9",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b2_seed9",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b2",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b2",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b2",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b2",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b2",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b2",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b2",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b2",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b2",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b2",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 2048,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed0",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed0",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed2",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed2",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed3",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed3",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed4",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed4",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed5",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed5",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed6",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed6",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed7",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed7",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed8",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed8",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed9",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b4_seed9",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b4",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b4",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b4",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b4",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b4",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b4",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b4",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b4",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b4",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b4",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 4096,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed0",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed0",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed1",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed1",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed2",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed2",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed3",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed3",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed4",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed4",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed5",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed5",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed6",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed6",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed7",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed7",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed8",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed8",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed9",
+      "warps": 1,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "packed_random_b8_seed9",
+      "warps": 4,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "k_stride": [
+        4096,
+        128,
+        1
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b8",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "zeros_b8",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b8",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "random_b8",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b8",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "small_b8",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b8",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "large_b8",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b8",
+      "warps": 1,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    },
+    {
+      "case": "extreme_b8",
+      "warps": 4,
+      "q_stride": [
+        8192,
+        256,
+        2
+      ],
+      "k_stride": [
+        8192,
+        256,
+        2
+      ],
+      "errors": {
+        "q": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 16384,
+          "finite": true
+        },
+        "k": {
+          "exact": true,
+          "different": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "elements": 8192,
+          "finite": true
+        }
+      },
+      "graph_exact": true,
+      "input_unchanged": true
+    }
+  ],
+  "guards": [
+    "dtype",
+    "heads",
+    "positions",
+    "weight",
+    "cache_dtype",
+    "epsilon",
+    "cpu",
+    "zero_stride"
+  ],
+  "exact_gate": true
+}

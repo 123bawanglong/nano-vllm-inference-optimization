@@ -1,0 +1,66 @@
+{
+  "source": "results\\closed_loop_20260921\\replay\\results\\full_project_20260919\\discovery_recheck\\analysis_1.json",
+  "kernel_events": 661895,
+  "model_steps": 1568,
+  "unmatched": 0,
+  "scope": "NEW single full seven-request capture; phase-role percentages are sums of GPU kernel durations, not wall time.",
+  "rows": [
+    {
+      "case": "b1_p64_o256",
+      "matrix_pct": 76.07895033324283,
+      "attention_pct": 14.252973532773133,
+      "norm_rope_pct": 3.131148402825697,
+      "norm_calls_per_step": 56.0,
+      "rope_calls_per_step": 56.0
+    },
+    {
+      "case": "b1_p256_o256",
+      "matrix_pct": 74.84203158778519,
+      "attention_pct": 15.244383956291088,
+      "norm_rope_pct": 3.119353266598085,
+      "norm_calls_per_step": 56.0,
+      "rope_calls_per_step": 56.0
+    },
+    {
+      "case": "b4_p64_o256",
+      "matrix_pct": 75.33677741319539,
+      "attention_pct": 13.685429995516369,
+      "norm_rope_pct": 3.724886623946207,
+      "norm_calls_per_step": 56.0,
+      "rope_calls_per_step": 56.0
+    },
+    {
+      "case": "b4_p256_o256",
+      "matrix_pct": 69.91562272276589,
+      "attention_pct": 19.64560610753526,
+      "norm_rope_pct": 3.6513430126545785,
+      "norm_calls_per_step": 56.0,
+      "rope_calls_per_step": 56.0
+    },
+    {
+      "case": "b8_p64_o256",
+      "matrix_pct": 72.46359007306167,
+      "attention_pct": 16.846881604061934,
+      "norm_rope_pct": 3.6776608470533985,
+      "norm_calls_per_step": 56.0,
+      "rope_calls_per_step": 56.0
+    },
+    {
+      "case": "b8_p256_o256",
+      "matrix_pct": 66.40429145604269,
+      "attention_pct": 23.31707685662239,
+      "norm_rope_pct": 3.670841167257512,
+      "norm_calls_per_step": 56.0,
+      "rope_calls_per_step": 56.0
+    },
+    {
+      "case": "b1_p2048_o32",
+      "matrix_pct": 70.431317540665,
+      "attention_pct": 20.092498370469105,
+      "norm_rope_pct": 3.344673964587683,
+      "norm_calls_per_step": 56.0,
+      "rope_calls_per_step": 56.0
+    }
+  ],
+  "decision": "Prototype Q/K Norm→RoPE: 112 nodes/step and immediate consumers allow fusion. Matrix/Attention dominate; implementation scope and dependency audit defer them, not evidence of optimal library efficiency."
+}
