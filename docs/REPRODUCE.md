@@ -75,7 +75,7 @@ bash scripts/full_project/reproduce.sh
 
 可把整份 `results/published_20260921` 复制到新的临时目录，并在 Python 中将 `scripts.full_project.analyze_ab.OUT` 指向副本，再调用 `main()`，重新计算 A/B 汇总。不要原地覆盖发布记录。
 
-`manifest.json` 的 12 个运行源码哈希和 baseline manifest 的 22 个源码哈希对应仓库中的原始实现。历史 JSON 内路径是采集时路径；发布数据统一放入 `published_20260921`，不会假装原始 profiler 文件也在仓库中。
+`manifest.json` 的运行源码及协议哈希对应[测量源码归档提交](https://github.com/123bawanglong/nano-vllm-inference-optimization/tree/23d2240f0df79550235ec7fe64f1412036a1b918)。当前版本将协议整理为 `docs/experiment_protocol.md`，并更新了准备、运行脚本的协议路径；核心 CUDA 和 baseline 源码保持不变。重新运行会生成新的源码与协议哈希，历史 manifest 不作改写。历史 JSON 内路径是采集时路径；发布数据统一放入 `published_20260921`。
 
 NCU 原始报告、Nsight Systems 原始报告/SQLite、模型权重和完整 logits 张量未上传。可查阅原生截图、NCU 导出表、SASS 和排名 CSV；重新在 GUI 中交互分析需自行重跑采集。原生截图内容未重绘；实验文档的少量解释性文字经整理，不改变测量数据。
 

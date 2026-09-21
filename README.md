@@ -4,7 +4,7 @@
 
 技术栈：C++ / CUDA / PyTorch / Triton / Nsight Systems / Nsight Compute。
 
-## 我做了什么
+## 实现与验证
 
 1. **先定位，再选择。** Nsight Systems 以 CUDA Graph node 粒度采集，用 NVTX 区分 Prefill 与每个 Decode step；按累计耗时和调用次数分别排序，并审查矩阵计算、Attention、归一化、MLP 与采样等候选。
 2. **形成可验证的融合假设。** 矩阵计算和 Attention 是主要耗时；Q/K Norm→RoPE 在七种场景中占 Decode GPU kernel 累计时间的 **3.12%～3.72%**，每步有 **112 个独立节点**。结合源码确认中间读写可消除，选择范围可控的融合原型。

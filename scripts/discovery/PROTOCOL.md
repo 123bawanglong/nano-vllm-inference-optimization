@@ -1,6 +1,6 @@
 # Full-chain candidate discovery — fixed before new measurements
 
-Execute the user's ordered plan: find cumulative time and high-frequency small kernels, inspect dependency/materialization opportunities across several model paths, then compare candidates and choose a prototype. Prior knowledge exists: do not present this as a historically blind discovery or promise Norm/RoPE wins.
+First identify cumulative time and high-frequency small kernels, inspect dependency/materialization opportunities across several model paths, then compare candidates and choose a prototype. This study follows earlier targeted measurements; it is not a historically blind discovery and does not predetermine a Norm/RoPE optimization.
 
 Reuse exactly original7 cases/inputs: B1/4/8 × P64/256 × O256, plus B1/P2048/O32. BF16 Qwen3-0.6B, FlashAttention, CUDA Graph enabled, TP1,64 KV pages ×256 tokens; source hash must match frozen native baseline.
 

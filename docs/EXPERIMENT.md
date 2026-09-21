@@ -90,7 +90,7 @@ BF16输入→FP32 Norm→寄存器内BF16舍入→FP32 RoPE→BF16输出
 ![image-20260921184312895](images/image-20260921184312895.png)
 
 
-融合后Roofline仍远低于上界；我用独立计时验证收益，不用NCU的3.328 μs冷重放时间计算加速比。
+融合后Roofline仍远低于上界；采用独立计时验证收益，不用NCU的3.328 μs冷重放时间计算加速比。
 
 ![image-20260921184932098](images/image-20260921184932098.png)
 
@@ -132,7 +132,7 @@ Scheduler Statistics：融合后Eligible约0.05，仍是小任务，收益不等
 ![image-20260921185208074](images/image-20260921185208074.png)
 
 
-Warp State Statistics：融合后仍有依赖等待；我保留这一限制，没有把所有stall下降当作成功条件。
+Warp State Statistics：融合后仍有依赖等待；保留这一限制，不以所有 stall 均下降作为成功条件。
 
 ![image-20260921185149330](images/image-20260921185149330.png)
 
