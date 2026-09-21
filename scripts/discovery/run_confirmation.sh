@@ -2,7 +2,6 @@
 set -euo pipefail
 source "$(dirname "$0")/../profiling/environment.sh"
 cd "$ROOT"
-NSYS=/home/xietaibo/tools/nsight-systems-cli-2026.5.1/opt/nvidia/nsight-systems-cli/2026.5.1/bin/nsys
 PARENT="$(cat "$ROOT/scripts/discovery/latest_result.txt")"
 OUT="$PARENT/confirmation"
 "$PYTHON" -m scripts.discovery.capture prepare --out "$OUT"

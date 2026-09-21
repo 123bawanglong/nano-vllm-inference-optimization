@@ -7,12 +7,13 @@ import torch
 from scripts.full_project import study
 from scripts.compile_boundary.common import baseline, ROOT
 
-EVIDENCE=ROOT.parent
+EVIDENCE=study.OUT/'variants'
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 
 def main(tag):
     assert tag in ('v1_fp32_intermediate','v2_bf16_boundary')
+    EVIDENCE.mkdir(parents=True,exist_ok=True)
     dest=EVIDENCE/f'numerical_{tag}.json'
     assert not dest.exists(), 'Never overwrite a measured variant'
     assert not (study.OUT/'numerical_fused.json').exists(), 'Final measurement already exists'

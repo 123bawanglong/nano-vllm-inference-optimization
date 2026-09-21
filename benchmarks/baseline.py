@@ -12,7 +12,7 @@ import subprocess
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-MODEL = Path('/home/xietaibo/models/Qwen3-0.6B')
+from scripts.runtime import MODEL
 CONFIG = dict(max_num_seqs=8, max_num_batched_tokens=4096,
               max_model_len=4096, gpu_memory_utilization=0.75,
               tensor_parallel_size=1, enforce_eager=False,
@@ -42,6 +42,7 @@ def sources():
     paths = list((ROOT / 'nanovllm').rglob('*.py'))
     paths += list((ROOT / 'benchmarks').glob('*.py'))
     paths += list((ROOT / 'scripts').glob('*.sh'))
+    paths += [ROOT / 'scripts/runtime.py', ROOT / 'scripts/experiment.py']
     return {str(p.relative_to(ROOT)): sha(p) for p in sorted(paths)}
 
 
@@ -79,7 +80,7 @@ def prepare(out):
          packages={p: importlib.metadata.version(p) for p in ('torch','triton','transformers','flash-attn')},
          nanovllm_path=nanovllm.__file__, flash_attn_path=flash_attn.__file__,
          compiler_cache=os.environ.get('TORCHINDUCTOR_CACHE_DIR'),
-         nvcc=command('/usr/local/cuda-12.8/bin/nvcc', '--version')))
+         nvcc=command(str(Path(os.environ['CUDA_HOME'])/'bin/nvcc') if os.environ.get('CUDA_HOME') else 'nvcc', '--version')))
     (out / 'environment_pip_freeze.txt').write_text(command(str(Path(os.sys.executable)), '-m', 'pip', 'freeze') + '\n')
     (out / 'baseline.patch').write_text(command('git', 'diff', '--', 'nanovllm/engine/model_runner.py') + '\n')
     print(f'Prepared {out}', flush=True)
@@ -90,6 +91,7 @@ def check_manifest(out):
     assert manifest['source_sha256'] == sources(), 'Source changed after baseline was frozen'
     assert manifest['workloads_sha256'] == sha(out / 'workloads.json')
     assert manifest['config'] == CONFIG
+    assert Path(manifest['model']).resolve() == MODEL, 'Model path changed after baseline was frozen'
     return manifest
 
 

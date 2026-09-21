@@ -9,15 +9,15 @@ import torch
 from scripts.compile_boundary.common import baseline, BASELINE, ROOT, error_metrics, save_trace, trace_kernels
 from scripts.compile_boundary.model_study import hooks, selected_steps, digest
 
-OUT = ROOT / 'results/full_project_20260919'
-FIXTURE = ROOT / 'results/compile_boundary_20260918_233238/real_first_layer_fixtures.pt'
+from scripts.runtime import OUT, FIXTURE, MODEL_FIXTURE
 
 
 def operational_sources():
     paths = [Path(__file__), Path(__file__).with_name('adapter.py')]
-    paths += [Path(__file__).with_name(name) for name in ('kernel_validation.py','run.sh','collect.sh','analyze_ab.py')]
+    paths += [Path(__file__).with_name(name) for name in ('kernel_validation.py','analyze_ab.py')]
     paths += [ROOT/'scripts/compile_boundary'/name for name in ('common.py','model_study.py')]
     paths += [ROOT/'scripts/profiling/environment.sh',ROOT/'scripts/discovery/idle_check.py']
+    paths += [ROOT/'scripts/experiment.py', ROOT/'scripts/runtime.py', ROOT/'scripts/discovery/capture.py', ROOT/'scripts/discovery/analyze.py']
     paths += sorted((ROOT / 'src/qk_norm_rope').glob('*.py'))
     paths += sorted((ROOT / 'src/qk_norm_rope').glob('*.cpp'))
     paths += sorted((ROOT / 'src/qk_norm_rope').glob('*.cu'))
@@ -34,7 +34,7 @@ def prepare():
     baseline.dump(OUT/'manifest.json', dict(baseline_sha256=baseline.sha(BASELINE/'baseline_manifest.json'),
         model_hashes_verified=True, sources=operational_sources(), config=baseline.CONFIG,
         workloads_sha256=baseline.sha(OUT/'workloads.json'), fixture_sha256=baseline.sha(FIXTURE),
-        protocol_sha256=baseline.sha(ROOT/'docs/EXPERIMENT.md'),
+        protocol_sha256=baseline.sha(ROOT/'docs/EXPERIMENT.md'), model_fixture_sha256=baseline.sha(MODEL_FIXTURE),
         paired_processes=10, measured_requests_per_case_per_process=2, gpu=baseline.gpu()))
 
 
@@ -44,6 +44,7 @@ def check():
     assert manifest['sources'] == operational_sources(), 'Experiment code changed'
     assert manifest['workloads_sha256'] == baseline.sha(OUT/'workloads.json')
     assert manifest['fixture_sha256'] == baseline.sha(FIXTURE)
+    assert manifest['model_fixture_sha256'] == baseline.sha(MODEL_FIXTURE)
     assert manifest['baseline_sha256'] == baseline.sha(BASELINE/'baseline_manifest.json')
     assert manifest['protocol_sha256'] == baseline.sha(ROOT/'docs/EXPERIMENT.md')
     return json.loads((OUT/'workloads.json').read_text())
@@ -67,6 +68,7 @@ def kernel_gate():
 @torch.inference_mode()
 def numerical(variant):
     rows = check()
+    assert not (OUT/f'numerical_{variant}.json').exists(), 'Refuse overwriting numerical evidence'
     llm = baseline.engine()
     audit = hooks(llm)
     runner = llm.model_runner
@@ -330,11 +332,12 @@ def integration_trace(variant):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser()
-    p.add_argument('mode',choices=['prepare','numerical','timing','micro','ncu','trace'])
+    p.add_argument('mode',choices=['prepare','check','numerical','timing','micro','ncu','trace'])
     p.add_argument('--variant',choices=['native','fused'],default='native')
     p.add_argument('--pair',type=int,default=1)
     a=p.parse_args()
     if a.mode=='prepare':prepare()
+    elif a.mode=='check':check()
     elif a.mode=='micro':micro()
     elif a.mode=='ncu':ncu(a.variant)
     else:

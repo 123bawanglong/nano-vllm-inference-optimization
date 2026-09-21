@@ -7,7 +7,7 @@ from pathlib import Path
 import torch
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'results/full_project_20260919'
+from scripts.runtime import OUT, FIXTURE, MODEL_FIXTURE
 
 def metrics(a, b):
     d = (a.float()-b.float()).abs()
@@ -23,7 +23,7 @@ def main(label):
     from nanovllm.layers.layernorm import RMSNorm
     from nanovllm.layers.rotary_embedding import RotaryEmbedding
     load_extension()
-    fixture_path=ROOT/'results/compile_boundary_20260918_233238/real_first_layer_fixtures.pt'
+    fixture_path=FIXTURE
     data=torch.load(fixture_path,weights_only=True,map_location='cuda')
     qw,kw,cache=data['q_weight'],data['k_weight'],data['cos_sin_cache']
     qn,kn=RMSNorm(128,data['eps']).cuda(),RMSNorm(128,data['eps']).cuda()
@@ -75,7 +75,7 @@ def main(label):
         try: fused(*bad)
         except (RuntimeError,ValueError,TypeError): guards.append(name)
         else: raise AssertionError(f'Missing input guard: {name}')
-    model_path=OUT/'kernel_model_fixtures_before.pt'
+    model_path=MODEL_FIXTURE
     model_data=torch.load(model_path,weights_only=True,map_location='cuda')
     model_rows=[]
     identity_cache=torch.cat((torch.ones((1,1,64),device='cuda'),torch.zeros((1,1,64),device='cuda')),-1)

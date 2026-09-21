@@ -29,3 +29,6 @@ results/baseline_20260918_170614/environment.json
 scripts/**/latest*.txt
 .vscode/
 tools/
+results/local/
+results/runs/
+models/

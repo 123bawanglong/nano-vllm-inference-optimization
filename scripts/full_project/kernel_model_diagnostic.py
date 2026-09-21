@@ -52,7 +52,7 @@ def main(label, mode):
         for item in [x for x in workloads if x['repeat']==1 and x['name'] in ('b1_p64_o256','b1_p256_o256','b1_p2048_o32','b4_p64_o256','b8_p64_o256')]:
             state.update(step=0,case=item['name'])
             baseline.request(llm,dict(item,output=18))
-        out=ROOT/'results/full_project_20260919'
+        from scripts.runtime import OUT as out
         result=dict(label=label,reduction_mode=mode,rows=rows,exact_gate=all(all(e['exact'] for e in r['errors'].values()) for r in rows),
                     captured_layers={b:len(v) for b,v in captures.items()},torch=torch.__version__,
                     source_sha256={str(p.relative_to(ROOT)):baseline.sha(p) for p in (ROOT/'src/qk_norm_rope').glob('*') if p.is_file()})

@@ -23,9 +23,10 @@ must lie in `[0, cache.size(0))`. This avoids a CPU synchronization during Graph
 capture. It uses the current PyTorch CUDA stream and guards the CUDA device.
 
 This is an inference experiment for Q16/K8 and head dimension 128. No backward,
-partial RoPE, alternative dtype, KV-cache store, or model integration is supplied.
-`CUDA_HOME=/usr/local/cuda-12.8`; the build cache lives under the Linux home
-directory, and the target architecture defaults to 12.0 (RTX 5080).
+partial RoPE, alternative dtype, or KV-cache store is supplied.
+Call `src.qk_norm_rope.adapter.install()` before constructing `LLM` for opt-in
+Decode integration. Set `CUDA_HOME` to your toolkit; the build cache lives under
+the Linux home directory. The target defaults to 12.0 (RTX 5080).
 
 The operator preserves the *native compiled* RMSNorm result rounding to BF16
 before RoPE. It intentionally does not reproduce eager Python's intermediate
@@ -38,9 +39,9 @@ Triton toolchain and compiler specialization. It is not a bitwise-equivalence
 promise for all compiler histories, layouts, or inputs. Full-model correctness
 must pass independently of the micro fixture gate.
 
-Run `python scripts/full_project/kernel_validation.py --label final` after
-sourcing `scripts/profiling/environment.sh`. Evidence and failed iterations are
-in `results/full_project_20260919/kernel_validation_*.json` and `.log`.
+Run `python -m scripts.experiment kernel --out results/runs/kernel-check`
+from the repository root. Fresh JSON and logs go into that new output directory;
+historical evidence remains in `results/published_20260921/`.
 The 138-row gate covers 9 real first-layer fixtures, 10 random packed seeds at
 B1/2/4/8, noncontiguous zero/random/small/large/extreme inputs, positions
 0/255/256/4095, both block configurations, Graph replay, and input immutability.

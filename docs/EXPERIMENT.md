@@ -1,6 +1,8 @@
 # nano-vLLM：从热点发现到融合验证
 
-**环境 和workload：** RTX 5080、Qwen3-0.6B、BF16、CUDA Graph；B=1/4/8 × 输入64/256 × 输出256，另加还有B 1/输入2048/输出32；KV=64页×256 token。
+**环境与 workload：** RTX 5080、Qwen3-0.6B、BF16、CUDA Graph；B=1/4/8 × 输入64/256 × 输出256，另加 B1/输入2048/输出32；KV=64页×256 token。
+
+本文记录 2026-09-21 的测量；图片为当时工具与运行结果的原生截图，数据见 [冻结结果](../results/published_20260921)。
 
 ## 1．Nsight Systems分析热点算子
 
@@ -13,7 +15,7 @@ Nsight Systems：累计耗时前三项是两类矩阵计算和一类 Attention�
 ![image-20260921181431507](images/image-20260921181431507.png)
 
 
-在Decode 时间线和源码确认：Q Norm、K Norm、Q RoPE、K RoPE 分开连续执行，是可以进行融合的重要候选
+Decode 时间线与源码确认：Q Norm、K Norm、Q RoPE、K RoPE 分开连续执行，可尝试融合。
 
 ![image-20260921183540731](images/image-20260921183540731.png)
 
@@ -51,7 +53,9 @@ Scheduler Statistics：Q Norm 的 Eligible约0.04、No Eligible约95.71%，可�
 ![image-20260921175046966](images/image-20260921175046966.png)
 
 
-Warp State Statistics：观察到 Long Scoreboard 访存依赖等待；需结合指令和数据依赖判断哪些读取可省掉，不能单凭 stall 决定融合。![image-20260921175100817](images/image-20260921175100817.png)
+Warp State Statistics：存在 Long Scoreboard 访存依赖等待；需结合指令和数据依赖判断哪些读取可省掉，不能单凭 stall 决定融合。
+
+![image-20260921175100817](images/image-20260921175100817.png)
 
 
 Source / SASS：实际指令包含SHFL.BFLY归约、MUFU.RSQ和BF16转换，融合时要保留对应数值语义。

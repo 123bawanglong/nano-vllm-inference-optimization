@@ -2,11 +2,12 @@
 import argparse
 import importlib.util
 import json
+import os
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
-BASELINE=ROOT/'results/baseline_20260918_170614'
-NSYS='/home/xietaibo/tools/nsight-systems-cli-2026.5.1/opt/nvidia/nsight-systems-cli/2026.5.1/bin/nsys'
+from scripts.runtime import BASELINE
+NSYS=os.environ.get('NSYS', 'nsys')
 spec=importlib.util.spec_from_file_location('baseline',ROOT/'benchmarks/baseline.py')
 baseline=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(baseline)

@@ -6,7 +6,7 @@ import hashlib
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'results/full_project_20260919'
+from scripts.runtime import OUT
 
 def percentile(values,q):
     x=sorted(values); index=(len(x)-1)*q; lo=int(index); hi=min(lo+1,len(x)-1)

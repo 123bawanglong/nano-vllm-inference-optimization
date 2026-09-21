@@ -6,7 +6,7 @@ import random
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-BASELINE = ROOT / 'results/baseline_20260918_170614'
+from scripts.runtime import BASELINE
 spec = importlib.util.spec_from_file_location('native_baseline', ROOT / 'benchmarks/baseline.py')
 baseline = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(baseline)
