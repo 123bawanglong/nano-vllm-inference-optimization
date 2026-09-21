@@ -64,7 +64,7 @@ RTX 5080 · Qwen3-0.6B · BF16 · TP=1 · CUDA Graph · PyTorch 2.11.0+cu128 · 
 
 ## 运行
 
-需要 Linux / WSL、兼容的 NVIDIA GPU、CUDA Toolkit、PyTorch、Triton、FlashAttention 和 Ninja。当前默认编译目标为 RTX 5080 的 SM120；先阅读 [复现说明](docs/REPRODUCE.md)，尤其是冻结环境与 bitwise 对齐的限制。
+需要 Linux / WSL、兼容的 NVIDIA GPU、CUDA Toolkit、PyTorch、Triton、FlashAttention 和 Ninja。当前默认编译目标为 RTX 5080 的 SM120；严格数值对齐依赖冻结的 PyTorch/Triton 环境，测试范围见 [实验说明](docs/EXPERIMENT.md)。
 
 ```bash
 git clone https://github.com/123bawanglong/nano-vllm-inference-optimization.git
@@ -81,6 +81,8 @@ python scripts/full_project/kernel_validation.py --label local
 ```
 
 模型接入须在创建 `LLM` 之前调用 `scripts.full_project.adapter.install()`；普通 `LLM` 默认仍走原生实现。验证命令不下载模型；仓库包含两份经过选择的数值 fixture，不包含模型权重、二进制、安装包或原始 profiler 大报告。
+
+完整复现使用 `python scripts/full_project/create_reproduction.py /absolute/path/to/new-run` 创建新目录，再进入该目录执行 `bash scripts/full_project/reproduce.sh`。冻结脚本的 Python、模型和 profiler 路径分别位于 `scripts/profiling/environment.sh`、`benchmarks/baseline.py` 和 `scripts/full_project/collect.sh`；换环境需重新配置并冻结 baseline，不能直接沿用旧哈希。当前脚本校验 `docs/EXPERIMENT.md`，历史测量源码与协议可在提交 `23d2240` 中查看；历史 manifest 不作改写。
 
 ## 来源与范围
 

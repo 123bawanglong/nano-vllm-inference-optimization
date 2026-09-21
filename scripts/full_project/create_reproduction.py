@@ -14,7 +14,7 @@ def main(destination):
     for name in ('nanovllm','benchmarks','scripts','src','tests'):
         shutil.copytree(ROOT/name,destination/name,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     inputs=[
-        'docs/experiment_protocol.md',
+        'docs/EXPERIMENT.md',
         'results/baseline_20260918_170614/baseline_manifest.json',
         'results/baseline_20260918_170614/workloads.json',
         'results/baseline_20260918_170614/process_1.json',

@@ -68,7 +68,7 @@ def summarize(out):
               '独立 eager smoke 保存第一层布局和 9 次前向的全量有限 logits；该 smoke 的时延不进入上表。', '',
               '初始化耗时（秒，排除在热推理计时外）：' + ', '.join(f"process {r['run_id']}={r['init_seconds']:.2f}" for r in runs) + '。', '',
               '这些是本机原版基线数据，未实现自定义 CUDA kernel，因此没有本项目优化收益结论。三个进程的范围不是置信区间；显示任务、频率与温度可能带来波动。后续微小提升必须通过交错配对 A/B 验证。', '',
-              '详细计时契约见 ../../docs/benchmark_protocol.md；原始逐步时间和输出 token ID 见 process_1/2/3.json。']
+              '计时范围见 ../../README.md；原始逐步时间和输出 token ID 见 process_1/2/3.json。']
     (out / 'summary.json').write_text(json.dumps(dict(validated=True,independent_processes=3,
          measured_batches=42,outputs_equal_across_processes=equal_outputs,cases=summary),indent=2)+'\n')
     (out / 'SUMMARY.md').write_text('\n'.join(lines)+'\n')
