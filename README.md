@@ -2,8 +2,7 @@
 
 **环境与 workload：** RTX 5080、Qwen3-0.6B、BF16、CUDA Graph；B=1/4/8 × 输入64/256 × 输出256，另加 B1/输入2048/输出32；KV=64页×256 token。
 
-[原始结果](docs/results)。截图与数据来自 2026-09-21 实验；四张代码和结果截图仅裁去编辑器外围区域，未修改内容或数值。
-
+[原始结果](docs/results)。
 ## 1．Nsight Systems分析热点算子
 
 Nsight Systems：按累计耗时排序，前三项是两类矩阵计算和一类 Attention；归一化 kernel 的耗时占比较小，但调用频繁。
